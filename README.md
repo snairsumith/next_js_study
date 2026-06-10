@@ -8,6 +8,7 @@ Training repository for **Next.js** — structured documentation for teaching in
 
 | Folder / file | Purpose |
 | ------------- | ------- |
+| `next-syllabus-demo/` | **Sample project** covering all 36 syllabus topics |
 | `docs/NextJs-syllabus.md` | Full 36-topic syllabus (beginner → production) |
 | `docs/topics-wise/` | Detailed teaching notes — one file per topic |
 | `docs/DailyUpdates.md` | Day-by-day training log template |
@@ -34,9 +35,21 @@ Students should complete **React training** first:
 
 ---
 
-## Create practice project
+## Sample project (recommended)
 
-When ready to code (Topic 3):
+A full demo app is included — use it alongside each topic:
+
+```bash
+cd next-syllabus-demo
+cp .env.example .env.local
+npm run dev
+```
+
+See `next-syllabus-demo/README.md` for the topic-to-route map.
+
+## Create your own practice project
+
+When ready to build from scratch (Topic 3):
 
 ```bash
 npx create-next-app@latest next-practice --typescript --tailwind --eslint --app --src-dir
