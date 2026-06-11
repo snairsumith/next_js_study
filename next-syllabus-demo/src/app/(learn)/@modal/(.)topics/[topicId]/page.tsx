@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { getTopicById } from "@/data/topics"
 import type { PageProps } from "@/types"
 
-// Intercepting route — Topic 5 (modal overlay on client navigation)
+// Intercepting route — must live inside (learn) because topics/ is under (learn)
 export default async function TopicModal({ params }: PageProps<{ topicId: string }>) {
   const { topicId } = await params
   const topic = getTopicById(Number(topicId))
@@ -19,14 +19,15 @@ export default async function TopicModal({ params }: PageProps<{ topicId: string
           </Link>
         </div>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Intercepting route modal — navigate from /topics to see this overlay.
+          Intercepting route modal — click a topic from /topics to see this overlay.
         </p>
-        <Link
+        {/* Use <a> for hard navigation — bypasses intercept and loads full page */}
+        <a
           href={`/topics/${topic.id}`}
           className="mt-4 inline-block text-sm text-blue-600 hover:underline"
         >
           View full page →
-        </Link>
+        </a>
       </div>
     </div>
   )

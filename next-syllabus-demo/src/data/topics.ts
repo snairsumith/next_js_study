@@ -47,3 +47,6 @@ export function getTopicById(id: number): Topic | undefined {
 export function getTopicBySlug(slug: string): Topic | undefined {
   return topics.find((topic) => topic.slug === slug)
 }
+
+
+
